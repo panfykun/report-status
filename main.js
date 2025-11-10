@@ -223,10 +223,11 @@ document.addEventListener('DOMContentLoaded', function() {
       1 日 ${aroundOndemand} 件ペースで ${Math.floor(daysFinal - remainingOndemand / aroundOndemand)} 日、${aroundOndemand + 1} 件ペースで ${Math.floor(daysFinal - remainingOndemand / (aroundOndemand + 1))} 日余ります`;
   }
   if (pixivDaysFinal >= 0 && remainingPixiv > 0) {
-    lastOndemand.innerText +=
+    lastPixiv.innerText +=
       `
       1 日 ${aroundPixiv} 件ペースで ${Math.floor(pixivDaysFinal - remainingPixiv / aroundPixiv)} 日、${aroundPixiv + 1} 件ペースで ${Math.floor(pixivDaysFinal - remainingPixiv / (aroundPixiv + 1))} 日余ります`;
   }
 
 })
+
 
