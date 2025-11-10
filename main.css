@@ -1,0 +1,29 @@
+body {
+  font-family: sans-serif;
+  margin: 20px;
+  background-color: #b0f6bf;
+}
+h1 {
+  font-size: 1.5rem;
+}
+table {
+  width: 100%;
+  border-collapse: collapse; /* 罫線を1本にする */
+  margin-top: 15px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+th, td {
+  border: 1px solid #ddd;
+  padding: 10px 12px;
+  text-align: left;
+}
+th {
+  background-color: #f2f2f2;
+}
+/* 奇数行の背景色 */
+tbody tr:nth-child(odd) {
+  background-color: #fff;
+}
+tbody tr:nth-child(even) {
+  background-color: #ececec;
+}

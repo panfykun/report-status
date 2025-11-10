@@ -1,0 +1,26 @@
+body {
+  font-family: sans-serif;
+  margin: 20px;
+  background-color: #b0f6bf;
+}
+h1 {
+  font-size: 1.5rem;
+}
+button {
+  padding: 5px 20px;
+  background-color: #d7d7d7;
+  border-style: none;
+}
+input {
+  height: 25px;
+}
+.input-set {
+  display: flex; /* 要素を横並びにする */
+   margin-bottom: 5px; /* 各行の間に隙間を空ける */
+}
+input-set input {
+  width: 350px; /* 1つ目の入力欄の幅 */
+}
+.input-set input:last-of-type {
+  width: 50px; /* 2つ目の入力欄の幅 */
+}
