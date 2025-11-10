@@ -4,14 +4,14 @@ const ondemand2nd       = new Date('2025-11-05 23:59:59');
 const ondemandFinal     = new Date('2025-11-26 23:59:59');
 const pixivFinal        = new Date('2025-11-26 23:59:59');
 const liveFinal         = new Date('2026-02-15 23:59:59');
-const deadlineMiddle    = document.getElementById('deadline-middle')
-const deadlineOndemand  = document.getElementById('deadline-ondemand')
-const deadlinePixiv     = document.getElementById('deadline-pixiv')
-const deadlineLive      = document.getElementById('deadline-live')
-const lastMiddle        = document.getElementById('last-middle')
-const lastOndemand      = document.getElementById('last-ondemand')
-const lastPixiv         = document.getElementById('last-pixiv')
-const lastLive          = document.getElementById('last-live')
+const deadlineMiddle    = document.getElementById('deadline-middle');
+const deadlineOndemand  = document.getElementById('deadline-ondemand');
+const deadlinePixiv     = document.getElementById('deadline-pixiv');
+const deadlineLive      = document.getElementById('deadline-live');
+const lastMiddle        = document.getElementById('last-middle');
+const lastOndemand      = document.getElementById('last-ondemand');
+const lastPixiv         = document.getElementById('last-pixiv');
+const lastLive          = document.getElementById('last-live');
 
 document.addEventListener('DOMContentLoaded', function() {
   // --- 1. report-edit.jsで保存したデータを読み込む ---
@@ -176,66 +176,56 @@ document.addEventListener('DOMContentLoaded', function() {
   const around1st = Math.ceil(remaining1st / (Math.floor(days1st) + 1));
   const around2nd = Math.ceil(remaining2nd / (Math.floor(days2nd) + 1));
   const aroundOndemand = Math.ceil(remainingOndemand / (Math.floor(daysFinal) + 1));
-  function aroundPixiv() {
-    if (pixivDaysFinal >= 0) {
-      return Math.ceil(remainingPixiv / (Math.floor(pixivDaysFinal) + 1));
-    } else {
-      return 0;
-    }
-  function aroundLive() {
-    if (liveDaysFinal >= 0) {
-      return Math.ceil(remainingLive / (Math.floor(liveDaysFinal) + 1));
-    } else {
-      return 0;
-    }
-  }
-  }
+  const aroundPixiv = Math.ceil(remainingPixiv / (Math.floor(pixivDaysFinal) + 1));
+  const aroundLive = Math.ceil(remainingLive / (Math.floor(liveDaysFinal) + 1));
+
   if (days1st >= 0) {
     deadlineMiddle.innerText =
-      `あと ${days1st} 日（オンデマンド科目 第 1 締切）`
+      `あと ${days1st} 日（オンデマンド科目 第 1 締切）`;
     lastMiddle.innerText =
-      `残り ${remaining1st} 件（第 1 締切分レポート）`
+      `残り ${remaining1st} 件（第 1 締切分レポート）`;
   } else if (days2nd >= 0) {
     deadlineMiddle.innerText =
-      `あと ${days2nd} 日（オンデマンド科目 第 2 締切）`
+      `あと ${days2nd} 日（オンデマンド科目 第 2 締切）`;
     lastMiddle.innerText =
-      `残り ${remaining2nd} 件（第 2 締切分レポート）`
+      `残り ${remaining2nd} 件（第 2 締切分レポート）`;
   }
   if (daysFinal >= 0) {
     deadlineOndemand.innerText =
-      `あと ${daysFinal} 日（オンデマンド科目 最終締切）`
+      `あと ${daysFinal} 日（オンデマンド科目 最終締切）`;
     lastOndemand.innerText =
-      `残り ${remainingOndemand} 件（オンデマンド科目 レポート）`
+      `残り ${remainingOndemand} 件（オンデマンド科目 レポート）`;
   }
   if (pixivFinal >= 0) {
     deadlinePixiv.innerText =
-      `あと ${pixivDaysFinal} 日（pixiv提携科目 最終締切）`
+      `あと ${pixivDaysFinal} 日（pixiv提携科目 最終締切）`;
     lastPixiv.innerText =
-      `残り ${remainingPixiv} 件（pixiv提携科目 レポート）`
+      `残り ${remainingPixiv} 件（pixiv提携科目 レポート）`;
   }
   if (liveFinal >= 0) {
     deadlineLive.innerText =
-      `あと ${liveDaysFinal} 日（ライブ映像科目 最終締切）`
+      `あと ${liveDaysFinal} 日（ライブ映像科目 最終締切）`;
     lastLive.innerText =
-      `残り ${remainingLive} 件（ライブ映像科目 レポート）`
+      `残り ${remainingLive} 件（ライブ映像科目 レポート）`;
   }
   if (days1st >= 0 && remaining1st > 0) {
     lastMiddle.innerText +=
       `
-      1 日 ${around1st} 件ペースで ${Math.floor(days1st - remaining1st / around1st)} 日、${around1st + 1} 件ペースで ${Math.floor(days1st - remaining1st / (around1st + 1))} 日余ります`
+      1 日 ${around1st} 件ペースで ${Math.floor(days1st - remaining1st / around1st)} 日、${around1st + 1} 件ペースで ${Math.floor(days1st - remaining1st / (around1st + 1))} 日余ります`;
   } else if (days2nd >= 0 && remaining2nd > 0) {
     lastMiddle.innerText +=
       `
-      1 日 ${around2nd} 件ペースで ${Math.floor(days2nd - remaining2nd / around2nd)} 日、${around2nd + 1} 件ペースで ${Math.floor(days2nd - remaining1st / (around2nd + 1))} 日余ります`
+      1 日 ${around2nd} 件ペースで ${Math.floor(days2nd - remaining2nd / around2nd)} 日、${around2nd + 1} 件ペースで ${Math.floor(days2nd - remaining1st / (around2nd + 1))} 日余ります`;
   }
   if (daysFinal >= 0 && remainingOndemand > 0) {
     lastOndemand.innerText +=
       `
-      1 日 ${aroundOndemand} 件ペースで ${Math.floor(daysFinal - remainingOndemand / aroundOndemand)} 日、${aroundOndemand + 1} 件ペースで ${Math.floor(daysFinal - remainingOndemand / (aroundOndemand + 1))} 日余ります`
+      1 日 ${aroundOndemand} 件ペースで ${Math.floor(daysFinal - remainingOndemand / aroundOndemand)} 日、${aroundOndemand + 1} 件ペースで ${Math.floor(daysFinal - remainingOndemand / (aroundOndemand + 1))} 日余ります`;
   }
   if (pixivDaysFinal >= 0 && remainingPixiv > 0) {
     lastOndemand.innerText +=
       `
-      1 日 ${aroundPixiv} 件ペースで ${Math.floor(pixivDaysFinal - remainingPixiv / aroundPixiv)} 日、${aroundPixiv + 1} 件ペースで ${Math.floor(pixivDaysFinal - remainingPixiv / (aroundPixiv + 1))} 日余ります`
+      1 日 ${aroundPixiv} 件ペースで ${Math.floor(pixivDaysFinal - remainingPixiv / aroundPixiv)} 日、${aroundPixiv + 1} 件ペースで ${Math.floor(pixivDaysFinal - remainingPixiv / (aroundPixiv + 1))} 日余ります`;
   }
+
 })
