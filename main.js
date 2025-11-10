@@ -146,9 +146,9 @@ document.addEventListener('DOMContentLoaded', function() {
       remainingOndemand += (15 - submissionValue);
     }
 
-    // ・科目区分が「pixiv提携科目」かつ「提出数」が15以下
-    if (category === 'pixiv' && submissionValue <= 15) {
-      remainingPixiv += (15 - submissionValue);
+    // ・科目区分が「pixiv提携科目」かつ「提出数」が8以下
+    if (category === 'pixiv' && submissionValue <= 8) {
+      remainingPixiv += (8 - submissionValue);
     }
 
     // ・科目区分が「ライブ映像科目」かつ「提出数」が15以下
@@ -229,3 +229,4 @@ document.addEventListener('DOMContentLoaded', function() {
   }
 
 })
+
