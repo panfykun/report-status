@@ -1,8 +1,8 @@
 'use strict';
-const ondemand1st       = new Date('2025-10-22 23:59:59');
-const ondemand2nd       = new Date('2025-11-05 23:59:59');
-const ondemandFinal     = new Date('2025-11-26 23:59:59');
-const pixivFinal        = new Date('2025-11-26 23:59:59');
+const ondemand1st       = new Date('2026-01-07 23:59:59');
+const ondemand2nd       = new Date('2026-01-28 23:59:59');
+const ondemandFinal     = new Date('2026-02-11 23:59:59');
+const pixivFinal        = new Date('2026-02-11 23:59:59');
 const liveFinal         = new Date('2026-02-15 23:59:59');
 const deadlineMiddle    = document.getElementById('deadline-middle');
 const deadlineOndemand  = document.getElementById('deadline-ondemand');
@@ -229,5 +229,6 @@ document.addEventListener('DOMContentLoaded', function() {
   }
 
 })
+
 
 
